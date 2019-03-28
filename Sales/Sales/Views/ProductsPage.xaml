@@ -1,9 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:i18n="clr-namespace:Sales.Helpers"
              x:Class="Sales.Views.ProductsPage"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
-             Title="Products">
+             Title="{i18n:Translate Products}">
+    <!-- Title="{i18n:Translate Products}" -->
 
     <ContentPage.ToolbarItems>
         <ToolbarItem x:Name="Stop" Clicked="Stop_Clicked" Text="Stop"/>
@@ -12,8 +14,12 @@
     <ContentPage.Content>
         <StackLayout BindingContext="{Binding Products}">
             <ListView x:Name="ProductsListView" 
+                      HasUnevenRows="True"
                       ItemsSource="{Binding Products}"
-                      HasUnevenRows="True">
+                      
+                      IsPullToRefreshEnabled="True"
+                      IsRefreshing="{Binding IsRefreshing}"
+                      RefreshCommand="{Binding RefreshCommand}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

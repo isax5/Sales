@@ -13,6 +13,7 @@ namespace Sales
         /// URL Base para consultas de datos
         /// </summary>
         public const string URLBaseAPI = @"https://salescursoapiservice.azurewebsites.net/";
+        public static string URLTesting = @"google.com";
 
 
         public const string ApiPrefix = @"api/";

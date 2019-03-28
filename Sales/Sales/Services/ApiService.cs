@@ -4,12 +4,39 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using Plugin.Connectivity;
 using Sales.Common.Models;
+using Sales.Helpers;
 
 namespace Sales.Services
 {
     public class ApiService
     {
+        public async Task<Response> CheckConnection()
+        {
+            if (!CrossConnectivity.Current.IsConnected)
+            {
+                return new Response
+                {
+                    IsSeccess = false,
+                    Message = Languajes.NoInternet
+                };
+            }
+
+            var isReachable = await CrossConnectivity.Current.IsRemoteReachable(Constants.URLTesting);
+            if (!isReachable)
+            {
+                return new Response
+                {
+                    IsSeccess = false,
+                    Message = Languajes.NoInternet
+                };
+            }
+
+            return new Response { IsSeccess = true };
+        }
+        
+
         /// <summary>
         /// Solicitar consulta de lista de elementos JSON
         /// </summary>
