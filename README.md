@@ -1,5 +1,6 @@
 # Sales
-[YouTube's class]()
+[YouTube's class](https://www.youtube.com/playlist?list=PLuEZQoW9bRnRnzwx4z1kzoY2Pt2nve6L_)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzE1MjIwMTIzLDYyNjAzMDU5XX0=
+eyJoaXN0b3J5IjpbLTcwMTExNzY1NSw3MTUyMjAxMjMsNjI2MD
+MwNTldfQ==
 -->
