@@ -1,5 +1,5 @@
 # Sales
-Curso Xamarin.Forms YouTube
+[YouTube's class]()
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjI2MDMwNTldfQ==
+eyJoaXN0b3J5IjpbNzE1MjIwMTIzLDYyNjAzMDU5XX0=
 -->
