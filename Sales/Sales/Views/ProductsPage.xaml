@@ -16,14 +16,35 @@
             <ListView x:Name="ProductsListView" 
                       HasUnevenRows="True"
                       ItemsSource="{Binding Products}"
-                      
                       IsPullToRefreshEnabled="True"
                       IsRefreshing="{Binding IsRefreshing}"
                       RefreshCommand="{Binding RefreshCommand}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Label Text="{Binding Description}"/>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Image
+                                    Grid.Column="0"
+                                    WidthRequest="100"
+                                    Source="{Binding ImageFullPath}"/>
+
+                                <Label
+                                    Grid.Column="1"
+                                    Text="{Binding Description}"
+                                    VerticalOptions="Center"/>
+
+                                <Label
+                                    Grid.Column="2"
+                                    HorizontalOptions="End"
+                                    Text="{Binding Price, StringFormat='{0:C2}'}"
+                                    VerticalOptions="Center"/>
+                            </Grid>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>

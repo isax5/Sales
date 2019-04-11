@@ -32,6 +32,20 @@ namespace Sales.Common.Models
         [DataType(DataType.Date)]
         public DateTime PublishOn { get; set; }
 
+        public string ImageFullPath
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(ImagePath))
+                {
+                    return "noProduct.png";
+                }
+                
+                // ImagePath tiene ~ por eso usamos substring
+                return $"http://salescursobackend.azurewebsites.net{ImagePath.Substring(1)}"; 
+            }
+        }
+
 
         public override string ToString()
         {
