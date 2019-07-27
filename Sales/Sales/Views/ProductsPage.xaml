@@ -5,7 +5,6 @@
              x:Class="Sales.Views.ProductsPage"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
              Title="{i18n:Translate Products}">
-    <!-- Title="{i18n:Translate Products}" -->
 
     <ContentPage.ToolbarItems>
         <ToolbarItem x:Name="Stop" Clicked="Stop_Clicked" Text="Stop"/>

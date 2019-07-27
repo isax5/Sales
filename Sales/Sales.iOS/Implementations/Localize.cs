@@ -1,14 +1,8 @@
-﻿using System;
-using System.Globalization;
+﻿using System.Globalization;
 using System.Threading;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 using Foundation;
 using Sales.Interfaces;
 using Sales.Helpers;
-using UIKit;
 
 [assembly: Xamarin.Forms.Dependency(typeof(Sales.iOS.Implementations.Localize))]
 namespace Sales.iOS.Implementations

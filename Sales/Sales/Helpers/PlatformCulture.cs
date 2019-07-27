@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Sales.Helpers
 {
@@ -18,7 +16,7 @@ namespace Sales.Helpers
             if (dashIndex > 0)
             {
                 var parts = PlatformString.Split('-');
-                LanguageCode= parts[0];
+                LanguageCode = parts[0];
                 LocaleCode = parts[1];
             }
             else

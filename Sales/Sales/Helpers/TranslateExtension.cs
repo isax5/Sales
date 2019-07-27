@@ -1,10 +1,8 @@
 ﻿using Sales.Interfaces;
 using System;
-using System.Collections.Generic;
 using System.Globalization;
 using System.Reflection;
 using System.Resources;
-using System.Text;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -13,10 +11,9 @@ namespace Sales.Helpers
     [ContentProperty("Text")]
     public class TranslateExtension : IMarkupExtension
     {
-        readonly CultureInfo ci;
-        const string ResourceId = "Sales.Resources.Resource";
-
-        static readonly Lazy<ResourceManager> ResMgr =
+        private readonly CultureInfo ci;
+        private const string ResourceId = "Sales.Resources.Resource";
+        private static readonly Lazy<ResourceManager> ResMgr =
             new Lazy<ResourceManager>(() => new ResourceManager(
                 ResourceId,
                 typeof(TranslateExtension).GetTypeInfo().Assembly));
@@ -39,16 +36,16 @@ namespace Sales.Helpers
 
             if (translation == null)
             {
-/*
-#if DEBUG
-                throw new ArgumentException(
-                    String.Format(
-                        "Key '{0}' was not found in resources '{1}' for culture '{2}'.",
-                        Text, ResourceId, ci.Name), "Text");
-#else
-                translation = Text; // returns the key, which GETS DISPLAYED TO THE USER
-#endif
-*/
+                /*
+                #if DEBUG
+                                throw new ArgumentException(
+                                    String.Format(
+                                        "Key '{0}' was not found in resources '{1}' for culture '{2}'.",
+                                        Text, ResourceId, ci.Name), "Text");
+                #else
+                                translation = Text; // returns the key, which GETS DISPLAYED TO THE USER
+                #endif
+                */
                 translation = Text; // returns the key, which GETS DISPLAYED TO THE USER
             }
 
